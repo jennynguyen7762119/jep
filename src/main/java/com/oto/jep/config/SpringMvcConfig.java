@@ -7,6 +7,7 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -24,7 +25,7 @@ import nz.net.ultraq.thymeleaf.LayoutDialect;
  * @author thuyntp
  *
  */
-@Configurable
+@Configuration
 @EnableWebMvc
 public class SpringMvcConfig extends WebMvcConfigurerAdapter {
 	
