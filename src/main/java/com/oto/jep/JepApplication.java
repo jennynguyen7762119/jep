@@ -3,13 +3,11 @@
  */
 package com.oto.jep;
 
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration;
 import org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration;
-import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
@@ -18,15 +16,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.web.servlet.DispatcherServlet;
 
-import com.sdc.sttb.SpeechToTextApplication;
-
 /**
  * @author thuyntp
  *
  */
 @EnableAutoConfiguration(exclude = { ThymeleafAutoConfiguration.class })
-@SpringBootApplication
 @ComponentScan(basePackages = "com.oto.jep")
+@SpringBootApplication
 @EnableAsync
 @Configuration
 public class JepApplication extends SpringBootServletInitializer {
@@ -45,12 +41,6 @@ public class JepApplication extends SpringBootServletInitializer {
         return registration;
     }
     
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(SpeechToTextApplication.class);
-    }
-
-
     /**
      * Customize {@link DispatcherServlet}.
      * activate throwExceptionIfNoHandlerFound

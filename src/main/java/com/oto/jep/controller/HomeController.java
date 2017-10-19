@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HomeController {
 
 	public static final String HOME_ACTION = "/home";
-	public static final String HOME_VIEW = "index";
+	public static final String HOME_VIEW = "home";
 	
 	@RequestMapping(value = HOME_ACTION, method = RequestMethod.GET)
 	public String goToHomePage(HttpServletRequest request, HttpServletResponse response) {
